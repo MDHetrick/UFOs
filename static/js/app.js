@@ -35,39 +35,44 @@ function updateFilters() {
 // write code to filter the table based on the user input that is stored in the filters variable.
 function filterTable() {
 
-  let filteredData = tableData 
+  let filteredData = tableData
+ ////////////////////////////////////////////////////////////////////////////////
+  // function filterRow(row){  // take filtered data and send each row through this
+  //   console.log('HERE IS MY ROW')
+  //   console.log(row)
+  //   if (row[id] == value) {
+  //     console.log('------------------row[id] value-----------------')
+  //     console.log(value)
+  //     return row[id] == value; // give me the rows for each id (shape) that have values that match that value (circle) from filters
+  //   }
+  //   else {
+  //     console.log('------------------row[id] under else-----------------')
+  //     console.log(row[id])
+  //   } 
+  // };
+  // }
+  //   for (id in filters) {               // for each key in the filters thing
+  //     var value = filters[id];          // the value is the one that has been inputted for that specific id -> example, the value for shape is circle
+  //     console.log("--------------value that we set is below--------------")
+  //     console.log(value)
+  //     filteredData = filteredData.filter(filterRow);  // we want to change our filtered data to the filtered data that has been sent through the filter row 
+///////////////////////////////////////////////////////////////////////////////////////
 
-  /* loop through the filters object and store the data that matches the filter 
-  values in the variable created in Step 8.
-  
-  for each item ID in filters, look through tableData 
-  and see if the VALUE exists and add it to filteredData 
-  */   
-  // Object.entries(filters)  => {      // in filters, for each id
-    // Object.values(dataRow).forEach((variable) => {
-    //   filteredData = filteredData.filter(row => row.id === variable)
-    // }) 
+for (id in filters) {               // for each key in the filters thing
+    var value = filters[id];
+    console.log(filters)
+    console.log(value)          // the value is the one that has been inputted for that specific id -> example, the value for shape is circle
+  }
 
-  function filterRow(row){
-    if (row[id] == value) {
-    return true;
+  filteredData.forEach((row) => {
+    if (row[id] == value)  {
+    console.log(value)
+    filteredData = filteredData.filter(row => row[id] == value);
     };
-  };
-
-  var filterArray = Object.entries(filters);
-  filterArray.forEach(([id, value]) => {
-  
-
-    
-
-    console.log(`k = ${id} v = ${value}`);
   });
+    buildTable(filteredData)
+  };
   
-buildTable(filteredData)
-
-}
- 
-
 d3.selectAll("input").on("change", updateFilters);
 buildTable(tableData);
 

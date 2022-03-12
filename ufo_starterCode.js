@@ -49,7 +49,20 @@ function updateFilters() {
   
     // 8. Set the filtered data to the tableData.
     
+  //  id = shape
+  // value = circle
+  // filter = {shape : circle}
+  function filterRow(row){  // take filtered data and send each row through this
+    return row[id] == value; // give me the rows for each id (shape) that have values that match that value (circle) from filters
+  };
+
+    for (id in filters) {               // for each key in the filters thing
+      var value = filters[id];          // the value is the one that has been inputted for that specific id -> example, the value for shape is circle
+      filteredData = filteredData.filter(filterRow);  // we want to change our filtered data to the filtered data that has been sent through the filter row 
   
+    }
+  
+
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
     
