@@ -21,21 +21,20 @@ var filters = {};
 function updateFilters() {
   let element = d3.select(this);
   let variable = element.property('value');
-  let id = element.attr('id')        
+  let id = element.attr('id');        
   if (variable !== '') { 
     filters[id] = variable;
   }
   else {
     delete filters[id];
   };
-  filterTable()
+  // filterTable();
+  filterDataForeach();
 }
   
 // 7. Use this function to filter the table when data is entered.
 // write code to filter the table based on the user input that is stored in the filters variable.
-function filterTable() {
 
-  let filteredData = tableData
  ////////////////////////////////////////////////////////////////////////////////
   // function filterRow(row){  // take filtered data and send each row through this
   //   console.log('HERE IS MY ROW')
@@ -57,22 +56,33 @@ function filterTable() {
   //     console.log(value)
   //     filteredData = filteredData.filter(filterRow);  // we want to change our filtered data to the filtered data that has been sent through the filter row 
 ///////////////////////////////////////////////////////////////////////////////////////
+function filterTable() {
 
-for (id in filters) {               // for each key in the filters thing
-    var value = filters[id];
-    console.log(filters)
-    console.log(value)          // the value is the one that has been inputted for that specific id -> example, the value for shape is circle
+  let filteredData = tableData
+  for (id in filters) {               // for each key in the filters thing
+      var value = filters[id];
+      filteredData = filteredData.filter(row => row[id] == value);
+       // the value is the one that has been inputted for that specific id -> example, the value for shape is circle
   }
+  buildTable(filteredData)
+}
 
-  filteredData.forEach((row) => {
-    if (row[id] == value)  {
-    console.log(value)
-    filteredData = filteredData.filter(row => row[id] == value);
-    };
-  });
-    buildTable(filteredData)
-  };
-  
+function filterDataForeach() {
+  let filteredData = tableData
+  Object.entries(filters).forEach(([id, val]) => 
+    filteredData = filteredData.filter(row => row[id] == val)
+  );
+  buildTable(filteredData)
+}
+  // for (id in filters) {               // for each key in the filters thing
+  //     var value = filters[id];
+  //     filteredData = filteredData.filter(row => row[id] == value);
+       // the value is the one that has been inputted for that specific id -> example, the value for shape is circle
+
+  // buildTable(filteredData)
+
+
+
 d3.selectAll("input").on("change", updateFilters);
 buildTable(tableData);
 
