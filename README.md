@@ -26,7 +26,7 @@ To change a filter, replace the text in the box.
 ## Summary
 **Design Drawbacks**
 
-One drawback of this design is that it is case sensitive, so if a user capitalizes differently, the the terms will not populate.
+One drawback of this design is that it is case sensitive, so the results will not populate if a user capitalizes differently.
 
 **Recommendations for Development**
 - Partial text search: it would be beneficial to add a partial search match. 
