@@ -1,9 +1,8 @@
 # UFOs
 ## Project Overview
-Explain the purpose of this analysis.
-## Results
-Describe how someone might use the new webpage by walking through the process of using the search criteria. Use images of your webpage during the filtering process to support your explanation.
+The purpose of this analysis is to create a webpage with filters to evaluate UFO sighting data.
 
+## Results
 When the website is loaded, the table will contain the entirety of the data. On the left side of the website is the section to filter the search. The data can be filtered by date, city, state, country, and shape.
 
 ![image](https://github.com/MDHetrick/UFOs/blob/main/resources/ufo_website.png)
@@ -24,8 +23,11 @@ To change a filter, replace the text in the box.
 
 ![image](https://github.com/MDHetrick/UFOs/blob/main/resources/state_filter2.png)
 
-
-
-
 ## Summary
-In a summary statement, describe one drawback of this new design and two recommendations for further development.
+**Design Drawbacks**
+
+One drawback of this design is that it is case sensitive, so if a user capitalizes differently, the the terms will not populate.
+
+**Recommendations for Development**
+- Partial text search: it would be beneficial to add a partial search match. 
+- Multiple search terms: it would also be useful to be able to have multiple search terms per parameter.
