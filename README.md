@@ -26,8 +26,9 @@ To change a filter, replace the text in the box.
 ## Summary
 **Design Drawbacks**
 
-One drawback of this design is that it is case sensitive, so the results will not populate if a user capitalizes differently.
+One drawback of this design is that it is case sensitive, so the results will not populate if a user capitalizes differently. Another drawback is if the user does not know the exact search terms, they may not find the desired information.
 
 **Recommendations for Development**
-- Partial text search: it would be beneficial to add a partial search match. 
-- Multiple search terms: it would also be useful to be able to have multiple search terms per parameter.
+- Partial text search: a partial search match would be useful if the user is not sure of the entirety of the search terms or the full spelling.
+- Addition of dropdowns: dropdowns would be a beneficial addition, so the user would know what the options are. This would especially be useful for the "Shape" field where the shape options are not defined.
+- Multiple search terms: it would also be useful to be able to have multiple search terms per parameter, for example 2 states and/or 2 different shapes.
