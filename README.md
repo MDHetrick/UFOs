@@ -17,6 +17,10 @@ Multiple search parameters can be added, and the resulting table will show only 
 
 ![image](https://github.com/MDHetrick/UFOs/blob/main/resources/filterABC.png)
 
+If there are no matches for the search parameters, just the header row will show with no table data below.
+
+![image](https://github.com/MDHetrick/UFOs/blob/main/resources/filter_noMatches.png)
+
 To change a filter, replace the text in the box.
 
 ![image](https://github.com/MDHetrick/UFOs/blob/main/resources/filterABC2.png)
